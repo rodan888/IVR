@@ -1,0 +1,1473 @@
+@import "bourbon"
+@import "_vars.sass"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+.top
+	min-height: 410px
+	background-repeat: no-repeat
+	background-size: cover
+	.descr-wrap
+		position: relative
+		min-height: 410px
+		.descr
+			position: absolute
+			top: 50%
+			left: 0
+			width: 50%
+			transform: translateY(-50%)
+			p
+				font-size: 20px
+
+
+
+
+//Custom Styles Here
+#contact-line
+	color: $textColor
+	text-transform: uppercase
+	font-size: 14px
+	line-height: 18px
+	min-height: 60px
+	padding: 10px 0
+	font-family: 'FregatBold'
+	background-color: $footBg
+	position: relative
+	.mob-contact
+		background-color: $footBg
+		display: none
+		button
+			font-size: 15px
+			line-height: 52px
+			text-transform: uppercase
+			display: block
+			text-align: center
+			width: 100%
+			i
+				font-size: 19px					
+	&.home
+		background-color: $white
+		padding: 25px 0 18px
+		min-height: 80px
+	&.rehab
+		font-size: 13px		
+		p
+			font-size: 14px
+			// line-height: 40px
+			a
+				display: block
+		a
+			// font-family: 'PTSansBold'
+			// color: $black		
+	a
+		color: $textColor
+		&:hover
+			text-decoration: underline
+
+#top-b	
+	background-repeat: no-repeat
+	background-size: 100% 160px;
+	// background-attachment: fixed
+	height: 160px
+	// background-position: 0 181px;
+	.title-b
+		position: relative
+		height: 160px
+		h1
+			position: absolute
+			color: $mainG
+			left: 0
+			top: 50%
+			font-size: 30px
+			margin-top: -24px
+			text-transform: uppercase
+		&.rehab
+			h1
+				color: $mainO
+
+.item-icon
+	min-height: 155px
+	p
+		position: relative
+		padding-left: 110px
+		color: $white
+		i,img
+			position: absolute
+			top: 0
+			left: 0
+			font-size: 100px
+
+#method
+	background-color: $mainG
+	color: $white
+	min-height: 340px
+	font-size: 14px
+	padding: 44px 0 30px
+	h2,.btn-wrap
+		max-width: 1170px
+		margin: 0 auto
+		padding: 0 15px
+	h2
+		text-transform: uppercase
+		margin-bottom: 44px
+		letter-spacing: 1px		
+	i
+		font-size: 100px
+	.btn
+		margin-top: 40px
+		color: $white
+		letter-spacing: 1px
+		padding-left: 0
+		&:before
+			color: $white
+	p
+		position: relative
+		padding-left: 110px
+		color: $white
+		i,img
+			position: absolute
+			top: 0
+			left: 0
+	.btn:after
+		background-color: $white
+
+.bread
+	margin: 20px 0
+	li
+		display: inline-block
+		color: $mainG
+		vertical-align: top
+		line-height: 30px
+		margin-right: 20px
+		font-size: 13px
+		a
+			color: $textColor
+			display: block
+			position: relative
+			line-height: 30px			
+			// &:before
+			// 	position: absolute
+			// 	content: ''
+			// 	width: 0
+			// 	height: 1px
+			// 	background-color: $textColor
+			// 	left: 0
+			// 	bottom: 2px
+			// 	transition: width 0.4s			
+			// &:hover:before
+			// 	width: 75%
+			&:after
+				position: absolute
+				content: '/'
+				line-height: 30px
+				right: -14px
+				color: $textColor
+		&:first-child
+			a
+				background-image: url("../img/home-icon.png")
+				background-repeat: no-repeat
+				background-position: center center
+				width: 23px
+				height: 27px
+
+	&.rehab
+		li
+			color: $mainO
+			&:first-child
+				a
+					background-image: url("../img/home-icon-rehub.png")
+				
+
+
+#top_slider,.slider-inner
+	position: relative
+	background-color: #F0F0F0
+	.sp-buttons
+		position: absolute
+		bottom: 10px
+		.sp-button
+			border: 1px solid $white
+			width: 12px
+			height: 12px
+			margin: 6px
+		.sp-selected-button
+			background-color: $white
+	.sp-arrows	
+		.sp-arrow
+			width: 65px
+			height: 65px
+			border-radius: 50%
+			&:before	
+				border: 1px solid $mainG
+				top: 0
+				left: 0
+				width: 65px
+				height: 65px
+				border-radius: 50%
+				line-height: 65px
+				font-size: 45px
+				color: $mainG
+				text-align: center
+				background-color: transparent
+				position: absolute
+			&.sp-previous-arrow
+				&:before
+					content: '\f104'		
+			&.sp-next-arrow
+				&:before
+					content: '\f105'	
+			&:after
+				width: 71px
+				height: 71px
+				top: -3px
+				left: -3px
+				border-radius: 50%
+				border: 1px solid $mainG
+				background-color: transparent
+				opacity: 0
+				transition: opacity 0.3s
+			&:hover:after
+				opacity: 1
+
+			
+	&.rehab
+		.btn
+			color: $mainO
+			border-color: $mainO	
+			&:hover
+				background-color: $mainO	
+				color: $white	
+		.sp-arrow
+			border-color: $mainO
+			&:before,&:after	
+				background-color: transparent
+		.sp-buttons
+			.sp-button
+				background-color: transparent!important
+				border: 1px solid $mainO!important
+			.sp-selected-button
+				background-color: $mainO!important
+		.sp-arrows
+			.sp-arrow
+				&:before,&:after
+					border-color: $mainO!important
+					color: $mainO!important
+	p.sp-layer
+		font-size: 28px
+		line-height: 35px
+		color: $textColor
+		&.rehab
+			font-size: 21px
+	&.inner
+		margin: 50px 0		
+		.sp-previous-arrow
+			// left: 0!important
+		.sp-next-arrow
+			// right: 0!important
+		p.sp-layer
+			font-size: 14px
+			line-height: 24px
+			color: $black
+
+		.img-wrap
+			position: absolute
+			top: 50%
+			left: 60px
+			width: 240px
+			height: 180px
+			transform: translateY(-50%)
+			img
+				width: 100%
+				height: auto
+		.sp-buttons
+			.sp-button
+				background-color: #B8B8B8
+				border: 1px solid #B8B8B8
+			.sp-selected-button
+				background-color: $mainG
+		.sp-arrows
+			.sp-arrow
+				position: absolute
+				top: -9px
+				width: 40px
+				height: 40px
+				&.sp-next-arrow
+					right: 10px
+					&:before
+						top: 3px
+						width: 40px
+						height: 40px
+						line-height: 37px
+					&:after
+						width: 46px
+						height: 46px
+						top: 0px
+						left: -3px
+				&.sp-previous-arrow
+					left: 10px
+					&:before
+						top: 3px
+						width: 40px
+						height: 40px
+						line-height: 37px
+					&:after
+						top: 0px
+						left: -3px
+						width: 46px
+						height: 46px
+
+.block-img
+	margin: 40px 0 30px
+	.descr
+		p
+			margin-bottom: 15px
+		ul
+			list-style-position: inside
+			list-style-type: disc
+			padding-right: 15px
+			font-size: 14px
+			color: $textColor
+			li
+				margin-bottom: 10px
+	.img-wrap	
+		overflow: hidden
+		height: 280px
+		position: relative
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			min-height: 100%
+			min-width: 100%
+			transform: translate(-50%, -50%)
+			-webkit-transform: translate(-50%, -50%)
+			-moz-transform: translate(-50%, -50%)
+			-o-transform: translate(-50%, -50%)
+
+.prise-item
+	h4
+		color: #3F3E40
+		position: relative
+		padding: 10px 
+		padding-right: 155px
+		font-family: 'PTSansBold'
+		background-color: #F1F2F2
+		span
+			position: absolute
+			top: 10px
+			right: 110px		
+			&:nth-child(2)	
+				right: 25px
+	p
+		padding: 25px 100px 25px 25px
+.dropdown-prise
+	margin: 30px 0
+	.dpd-wrap
+		border-bottom: 1px solid #C7C7C7
+		&:first-child
+			border-top: 1px solid #C7C7C7
+		h4.dpd-prise
+			padding: 30px 0
+			cursor: pointer
+			text-transform: uppercase
+			color: #3F3E40
+			i
+				margin: 0 15px 0 5px
+		.dpd-item-wrap
+			display: none
+
+
+
+
+#review
+	.review
+		margin-bottom: 50px
+		.block-title
+			position: relative
+			padding-left: 73px
+			font-size: 14px
+			margin-bottom: 20px
+			margin-top: 15px
+			min-height: 65px
+			.img-wrap
+				position: absolute
+				top: 0
+				left: 0
+				border-radius: 50%
+				width: 65px
+				height: 65px
+				overflow: hidden			
+				img
+					width: 100%
+			h3
+				font-size: 14px
+				line-height: 18px
+				font-family: 'PTSansRegular'
+				span:first-child
+					color: $mainG
+					display: block
+				span:last-child
+					color: $black
+		.block-content
+			p
+				background-color: #F0F0F0
+				position: relative
+				border-radius: 10px
+				padding: 20px
+				font-size: 14px
+				&:before
+					position: absolute
+					content: ''
+					width: 0
+					height: 0
+					top: -15px
+					left: 25px
+					border-style: solid
+					border-width: 0 10px 20px 10px
+					border-color: transparent transparent #F0F0F0 transparent
+			a
+				color: $textColor
+				text-decoration: underline
+	.btn
+		text-align: left
+		color: $black
+		min-width: 120px
+	&.rehab
+		h2.title
+			color: $mainO
+		.review
+			.block-title
+				h3
+					span:first-child
+						color: $mainO
+
+#backbone,#offer,#course
+	.b-item
+		margin-bottom: 30px	
+		color: $white	
+		padding: 0 5px
+		&:hover
+			img
+				transform: scale(1.2)
+				-webkit-transform: scale(1.2)
+				-moz-transform: scale(1.2)
+				-o-transform: scale(1.2)
+		.img-block
+			overflow: hidden
+			height: 200px
+			img
+				width: 100%
+				min-height: 100%
+				transition: transform 1.0s
+		p.descr
+			background-color: #656565
+			height: 155px
+			font-size: 14px
+			padding: 15px 30px
+			line-height: 22px
+			color: $white
+	.btn
+		color: $black
+#offer,#course
+	.b-item
+		height: 455px
+		overflow: hidden
+		h3
+			color: $mainG
+			font-family: 'FregatRegular'
+			padding: 10px 30px
+			background-color: #F0F0F0
+			font-size: 16px
+			font-weight: 200
+		p.descr
+			min-height: 211px
+			background-color: #F0F0F0
+			color: #6B6C6C
+			padding-top: 0
+#course
+	.img-block
+		height: 255px!important
+	.b-item
+		h3,p.descr
+			background-color: #656565	
+			color: $white			
+
+
+#news
+	.n-item
+		padding-right: 20px
+	h3
+		color: $mainG
+		font-family: 'FregatRegular'
+		margin-bottom: 20px
+		font-size: 16px
+		font-weight: 200
+	p
+		font-size: 14px
+		line-height: 22px
+	.btn
+		color: $black
+		text-align: left
+		min-width: 110px
+		padding-left: 0
+		text-transform: inherit
+		font-size: 14px
+		&:before
+			font-size: 27px
+			line-height: 20px
+
+#home
+	padding-bottom: 80px
+
+.institute-descr
+	.img-wrap
+		height: 370px 
+		position: relative
+		overflow: hidden
+		img
+			position: absolute
+			top: 0 
+			left: 0
+			height: 100%
+			min-width: 100%
+	.descr
+		min-height: 370px
+		border-bottom: 1px solid #B8B6B8
+		h3
+			margin-bottom: 35px
+			font-size: 21px
+			letter-spacing: 1px
+			color: $mainG
+			line-height: 30px
+			margin-bottom: 25px
+		.subtitle
+			color: $textColor
+.advantages
+	min-height: 185px
+	background-color: $footBg
+	margin-top: 30px
+	margin-bottom: 40px
+	.a-item
+		position: relative
+		height: 185px
+		color: $mainG
+		i,p
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			-webkit-transform: translateY(-50%)
+			-moz-transform: translateY(-50%)
+			-o-transform: translateY(-50%)
+		i	
+			font-size: 100px
+			left: 15px
+		p
+			font-size: 16px
+			left: 125px		
+			padding-right: 15px	
+
+#team,#therapy
+	.descr	
+		border-bottom: 1px solid #B8B6B8
+		padding-bottom: 20px
+		ul
+			list-style-type: disc
+			list-style-position: inside
+			margin-top: 20px
+			li
+				margin-bottom: 15px
+	.img-wrap
+		position: relative
+		height: 300px		
+		overflow: hidden
+		max-width: 460px
+		margin: 0 auto 25px
+		img
+			position: absolute
+			top: 0
+			left: 0
+			height: 100%
+			min-width: 100%
+
+#therapy
+	.descr
+		min-height: 625px
+	&.rehab
+		margin-top: 30px
+#team
+	margin-top: 55px
+	.descr
+		min-height: 300px
+#lever
+	margin: 55px 0
+	.descr
+		p
+			margin-bottom: 20px
+	ul
+		li
+			position: relative
+			color: $mainG
+			padding-left: 115px
+			margin-bottom: 20px
+			border-bottom: 1px solid #B8B6B8
+			min-height: 125px
+			i
+				position: absolute
+				font-size: 100px
+				left: 0
+				top: 0
+			&:last-child
+				border-bottom: none
+#instityte
+	.advantages
+		p
+			color: $mainG
+
+
+
+
+
+
+
+
+
+
+footer
+	background-color: $footBg
+	min-height: 310px
+	padding-top: 40px
+	font-size: 14px
+	color: $textColor
+	.logo
+		font-size: 100px
+		i
+			vertical-align: super
+	.copy
+		margin-top: 30px
+		font-size: 12px
+		min-height: 30px
+	.place
+		margin-bottom: 15px
+		a
+			color: #595B5E
+			transition: padding 0.3s
+			&:hover
+				padding-left: 15px
+				text-decoration: underline
+	ul.nav		
+		a
+			color: $textColor
+			padding: 0px 0 10px
+			display: block
+			&:hover
+				text-decoration: underline
+	ul.social
+		margin-top: 15px
+		li
+			display: inline-block
+			margin-right: 10px
+			a
+				display: block
+				width: 40px
+				height: 40px
+				border-radius: 50%
+				font-size: 20px
+				line-height: 40px
+				color: $white
+				background-color: $socBg
+				text-align: center
+				transition: background-color 0.3s
+				&:hover
+					background-color: $black
+
+//popup
+.popup
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(237,238,240, .8)
+	z-index: 10000
+	background-size: cover	
+	.upload
+		line-height: 55px
+		color: $mainG
+		transition: margin 0.3s
+		position: relative
+		&:before
+			position: absolute
+			content: ""
+			width: 0
+			height: 1px
+			background-color: $mainG
+			bottom: -1px
+			left: 0
+			transition: width 0.3s
+		&:hover
+			margin-left: 10px
+			&:before
+				width: 100%
+	.popup-content
+		width: 80%
+		height: 80%
+		top: 10%
+		left: 10%
+		position: absolute
+		text-align: center
+		text-align: center
+		img
+			// width: 100%			
+			min-height: 100%
+			// position: absolute
+			top: 0
+			left: 0
+	.fade_out
+		position: absolute
+		top: 0px
+		right: 0px
+		width: 40px
+		height: 40px
+		color: #fff
+		line-height: 40px
+		text-align: center
+		font-size: 15px
+		cursor: pointer
+		color: #B0B0B0
+		font-weight: bold
+	.form
+		text-align: left
+		position: absolute
+		width: 100%
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		-moz-translate(-50%, -50%)
+		-o-translate(-50%, -50%)
+		-ms-translate(-50%, -50%)
+		-webkit-translate(-50%, -50%)
+		text-align: center
+		p
+			text-align: center
+	.form
+		background-color: $white		
+		max-width: 430px		
+		border-radius: 8px
+		padding: 40px 15px 30px 15px
+		text-align: left
+		select
+			display: none
+		.select
+			position: relative
+			.select-styled
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0	
+				padding-top: 13px
+				color: $textColor	
+				&:before
+					position: absolute
+					content: '\f107'
+					width: 35px
+					font: normal normal normal 14px/1 FontAwesome
+					height: 20px
+					top: 50%
+					margin-top: -10px
+					right: 0
+					line-height: 18px
+					font-size: 25px
+					text-align: center
+					color: $textColor			
+				&.active:before
+					content: '\f106'
+
+			.select-options
+				position: absolute
+				left: 0
+				top: 45px
+				width: 100%
+				background-color: #EDEEEF
+				z-index: 100
+				border-left: 1px solid #DADADA
+				border-right: 1px solid #DADADA
+				li
+					color: $textColor
+					height: 30px			
+					border-bottom: 1px solid #DADADA
+					cursor: pointer
+					padding-top: 4px
+					transition: background-color 0.3s
+					&:last-child
+						border-bottom-left-radius: 8px
+						border-bottom-right-radius: 8px
+					&:hover
+						background-color: $white
+
+		h2
+			margin-bottom: 15px
+			text-align: center
+			color: $mainG
+		p
+			color: $textColor
+			text-align: left			
+			font-size: 16px
+			margin-bottom: 20px
+			padding: 0 15px
+		label
+			display: block
+			font-size: 16px
+			margin-bottom: 10px
+		input,textarea,.select
+			display: inline-block
+			border: 1px solid #DADADA
+			height: 50px
+			border-radius: 8px
+			text-indent: 10px
+			width: 100%
+			font-size: 12px
+			margin-bottom: 20px
+			background-color: #EDEEEF
+		textarea
+			height: 90px
+.content-c
+	margin-bottom: 50px
+	h3
+		color: $mainG
+		margin-top: 30px
+	p
+		color: $textColor
+		font-size: 15px
+	div
+		position: relative
+		padding-left: 40px
+		max-width: 400px
+		margin-top: 30px
+		i
+			position: absolute
+			top: 0
+			left: 0
+			width: 30px
+			height: 30px
+			background-color: $mainG
+			color: $white
+			line-height: 30px
+			text-align: center
+			border-radius: 50%
+
+.side-nav
+	h3
+		color: #57585B
+		text-transform: uppercase
+		margin-bottom: 35px
+	ul
+		li
+			color: $mainG
+			border-bottom: 1px solid $textColor
+			line-height: 52px
+			font-size: 20px
+			font-family: 'FregatRegular'
+			a
+				display: block			
+				color: $textColor
+				transition: all 0.3s
+				&:hover
+					color: $mainG
+					padding-left: 15px
+	&.rehab
+		ul
+			li
+				color: $mainO
+				a:hover
+					color: $mainO
+.side-nav
+	.ajax-nav
+		li.page-ajax
+			color: $textColor
+			transition: all 0.3s
+			cursor: pointer			
+			&:hover
+				color: $mainG
+				padding-left: 15px
+			&.active
+				color: $mainG
+
+#info
+	background-color: $orange
+	padding: 30px 0
+	.content-info
+		color: $white
+		position: relative
+		padding-left: 115px
+		i
+			position: absolute
+			font-size: 68px
+			top: 50%
+			margin-top: -34px
+			left: 0px
+		p
+			color: $white
+	&.grey
+		background-color: #F1F2F2
+		i
+			color: #797979!important
+			left: 25px
+		p
+			color: $black
+			span
+				font-weight: 600
+#result,.result
+	i,img
+		font-size: 100px
+		color: $orange
+		display: block
+		margin: 20px auto
+		text-align: center
+	p
+		color: $textColor
+		font-size: 16px
+		text-align: center	
+#history
+	position: relative
+	min-height: 330px
+	background-color: #EBEBEB
+	margin: 50px 0
+	>div
+		position: absolute
+	.text
+		top: 50%
+		left: 0
+		transform: translateY(-50%)
+		-webkit-transform: translateY(-50%)
+		-moz-transform: translateY(-50%)
+		-o-transform: translaeY(-50%)
+		text-align: left
+		width: 50%		
+		padding: 0 20px
+		h3
+			text-transform: uppercase
+			color: $black
+			margin-bottom: 20px
+			font-family: 'FregatRegular'
+			font-weight: 100
+	.img-wrap
+		top: 0
+		right: 0
+		width: 50%
+		height: 330px
+		overflow: hidden
+		img
+			width: 100%
+			min-height: 330px
+
+#how
+	.item-h
+		position: relative
+		padding-left: 110px
+		min-height: 240px
+		margin-bottom: 20px
+		i,img
+			position: absolute
+			top: 0
+			left: 0
+			font-size: 100px
+			color: $orange
+		h3
+			color: $black		
+			text-transform: uppercase
+			font-size: 16px
+			font-family: 'FregatRegular'
+			font-weight: 100
+		p
+			color: $textColor
+			font-size: 16px
+	.btn
+		color: $black
+
+.david-advant
+	.item
+		position: relative
+		padding-left: 130px
+		color: $textColor
+		font-size: 14px
+		margin-bottom: 30px
+		i
+			font-size: 100px
+			position: absolute			
+			top: 0
+			left: 0
+			color: $orange
+		.btn
+			color: $black
+#sliders
+	margin-top: 60px
+	.item
+		border-bottom: 1px solid #B8B6B8
+		margin-bottom: 30px
+		padding-bottom: 30px		
+		.slider-inner
+			max-width: 100%!important
+			max-height: 515px!important			
+		ul
+			margin-top: 30px
+			li
+				color: $textColor
+				margin-bottom: 10px
+				font-size: 14px
+				list-style-type: disc
+				list-style-position: inside
+
+.problem-decision
+	font-size: 0
+	margin: 30px 0
+	span
+		display: inline-block
+		width: 50%
+		font-size: 16px
+		text-transform: uppercase
+		padding: 5px 0
+		text-align: center
+		font-family: 'FregatRegular'
+		font-weight: 100
+		&:first-child
+			color: $mainO
+			background-color: #FFD6C5
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				width: 0
+				height: 0
+				top: 0
+				right: -30px
+				border-style: solid
+				border-width: 17.5px 0 17.5px 30px
+				border-color: transparent transparent transparent #FFD6C5
+		&:last-child
+			color: $mainG
+			background-color: #7AD7AC 
+.item-problem,.item-decision
+	margin-bottom: 30px
+	padding-right: 40px
+	min-height: 185px
+	h3
+		position: relative
+		color: $mainO
+		padding-left: 40px
+		margin-bottom: 15px
+		font-size: 16px
+		font-family: 'FregatRegular'
+		font-weight: 100
+		&:before
+			position: absolute
+			width: 20px
+			height: 20px
+			border-radius: 50%
+			background-color: $mainO
+			content: '!'
+			line-height: 20px
+			text-align: center
+			color: $white
+			font-size: 14px
+			top: 1px
+			left: 0px
+	p
+		color: $textColor
+		font-size: 14px
+.item-decision
+	padding-left: 110px
+	position: relative
+	padding-right: 0
+	i
+		font-size: 10px
+		position: absolute
+		top: 0
+		left: -15px
+		color: $mainG
+		font-size: 100px
+	h3
+		color: $mainG
+		&:before
+			background-color: $mainG
+			content: '\2713'
+.popup-deskr
+	padding-right: 15px
+	.btn.small
+		margin-top: 20px	
+.popup-block,.grafik
+	.img-wrap
+		position: relative
+		text-align: center
+		&:before
+			position: absolute
+			content: ''
+			top: 0
+			left: 0			
+			background-color: #F3F4F4
+			width: 100%
+			height: 100%
+			opacity: 0.5
+		&:hover a
+			transform: rotate(90deg)
+		a
+			position: absolute
+			display: block
+			top: 50%
+			left: 50%
+			width: 100px
+			height: 100px
+			margin-top: -50px
+			margin-left: -50px
+			transition: transform 0.5s			
+			i
+				font-size: 100px
+				color: #C3C4C4
+.grafik
+	margin: 30px 0
+	h3
+		text-transform: uppercase
+		color: $textColor
+		font-size: 14px
+		margin-bottom: 15px
+	.img-wrap
+		&:before
+			display: none
+	.descr
+		i
+			color: $black
+			font-size: 14px
+			font-family: 'PTSansBold'
+			line-height: 16px
+
+.flag-title
+	color: $black
+	padding: 40px 20px 40px 120px
+	background-color: $footBg
+	position: relative
+	margin-bottom: 25px
+	h3
+		font-size: 15px
+	img
+		position: absolute
+		top: 29px
+		left: 20px
+		width: 73px
+
+
+	
+
+
+.i-block
+	position: relative
+	padding-left: 120px
+	min-height: 100px
+	margin-bottom: 10px
+	&.orange
+		margin-bottom: 30px
+		i
+			color: $orange
+	i
+		position: absolute
+		font-size: 100px
+		color: $mainO
+		top: 0
+		left: 5px
+	p
+		font-size: 14px
+		color: $textColor
+.tabs
+	.tabs-nav
+		margin-top: 30px	
+		margin-bottom: 50px
+		ul
+			li
+				display: inline-block
+				padding: 10px 20px
+				background-color: #797979
+				color: $white
+				cursor: pointer
+				&.active,&:hover
+					background-color: #00B100
+	.dropdown-prise
+		margin-top: 0
+	.tab-item
+		display: none	
+	.dop-info
+		min-height: 40px
+		position: relative
+		span
+			position: absolute
+			bottom: 5px
+			font-size: 14px
+			line-height: 15px
+			color: #4A4A4A
+			a
+				color: #4A4A4A
+			&:first-child
+				left: 0
+			&:last-child
+				width: 100px
+				right: 0
+	#kyiv	
+		display: block
+
+.card
+	margin-top: 30px
+	padding: 0 10px
+	min-height: 430px
+	h3
+		text-transform: uppercase
+		margin: 15px 0
+	.img-wrap	
+		height: 280px
+		overflow: hidden
+		position: relative
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+.descr-cont
+	margin-bottom: 35px
+	p,h3,h4
+		margin-bottom: 15px
+		font-size: 16px		
+	h2
+		text-transform: uppercase
+		margin-bottom: 35px
+		margin-top: 20px
+		letter-spacing: 1px
+		color: $mainG
+		font-size: 21px
+	ul
+		list-style-type: disc
+		// list-style-position: inside
+		padding-left: 15px
+		li
+			margin-bottom: 15px
+
+	&.rehab
+		h2
+			color: $mainO
+
+.gmap
+	height: 370px
+
+#ajax-page
+	position: relative
+	min-height: 500px
+	.speener
+		position: absolute
+		display: none
+		z-index: 1000
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		background-color: rgba(255,255,255, .5)
+		background-image: url("../img/ajax_loader.gif")
+		background-repeat: no-repeat
+		background-position: center center
+
+// .top_slider
+// 	.sp-arrows
+// 		width: 1170px
+// 		left: 50%
+// 		transform: translateX(-50%)
+// 		-webkit-transform: translateX(-50%)
+// 		-moz-transform: translateX(-50%)
+// 		-ms-transform: translateX(-50%)
+// 		-o-transform: translateX(-50%)
+// 	&.inner		
+// 		.sp-arrows
+// 			width: 100%
+// .sp-slide
+// 	.sp-layer
+// 		max-width: 500px
+
+.conten-treat
+	p
+		margin-bottom: 20px
+	h2,h3,h4
+		margin-bottom: 10px
+
+.top_slider	
+	&.inner
+		margin: 40px 0
+		.item
+			position: relative
+			background-color: #f1f2f2
+			padding: 35px 60px
+			padding-left: 320px
+			min-height: 270px
+			.img-wrap
+				width: 240px
+				height: 200px
+				overflow: hidden				
+				position: absolute
+				top: 35px
+				left: 60px
+				img
+					position: absolute
+					height: 100%
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+					-webkit-transform: translate(-50%, -50%)
+					-o-transform: translate(-50%, -50%)
+					-moz-transform: translate(-50%, -50%)
+			.descr
+				position: initial
+				transform: none
+				width: 100%
+				padding: 0
+				h3
+					text-transform: uppercase
+				p
+					margin-bottom: 0	
+					font-size: 16px	
+					line-height: 25px			
+		.owl-controls
+			.owl-buttons
+				width: 100%
+				div
+					top: -120px
+					line-height: 0
+					&:before
+						width: 38px
+						height: 38px
+					i
+						width: 30px
+						height: 30px
+						line-height: 30px
+						font-size: 30px
+				.owl-prev
+					left: 14px
+				.owl-next
+					right: 14px
+		.owl-pagination
+			.owl-page
+				span
+					background-color: #B8B8B8
+					border: 1px solid #B8B8B8
+				&:hover,&.active
+					span
+						background-color: $mainG!important
+						border: 1px solid $mainG
+	&.rehub
+		.owl-pagination
+			.owl-page									
+				&:hover,&.active
+					span
+						background-color: $mainO!important
+						border: 1px solid $mainO
+		.owl-controls
+			.owl-buttons			
+				div
+					border: 1px solid $mainO
+					&:before
+						border: 1px solid $mainO
+					i
+						color: $mainO
+	.owl-controls
+		position: absolute
+		bottom: 0
+		width: 100%
+		left: 0
+		.owl-buttons
+			position: relative
+			width: 1170px
+			margin: 0 auto
+			// display: none
+			opacity: 0			
+			transition: opacity 0.3s
+			div
+				font-size: 65px
+				line-height: 10px
+				top: -212px
+				margin-top: -32px
+				border: 1px solid $mainG
+				border-radius: 50%
+				&:before
+					position: absolute
+					content: ''
+					width: 71px
+					height: 71px
+					top: -4px
+					left: -4px
+					border: 1px solid $mainG
+					border-radius: 50%
+					// display: none
+					opacity: 0
+					transition: opacity 0.3s
+				&:hover
+					&:before
+						// display: block
+						opacity: 1
+				i
+					font-size: 41px
+					height: 63px
+					width: 63px
+					line-height: 65px
+					color: $mainG
+	&:hover	
+		.owl-buttons
+			// display: block
+			opacity: 1
+	.owl-pagination
+		.owl-page
+			span
+				background-color: transparent
+				border: 1px solid $white
+			&:hover,&.active
+				span
+					background-color: $white!important
+	.item		
+		.descr
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 50%
+			height: 100%
+			max-width: 500px
+			padding-top: 50px
+			transform: translateY(-50%)
+			-webkit-transform: translateY(-50%)
+			-moz-transform: translateY(-50%)
+			-o-transform: translateY(-50%)
+			p
+				font-size: 28px
+				line-height: 35px
+				color: #6B6C6C
+				margin-bottom: 50px
+
+
+
+
+
+//ALWAYS END
+@import "media"

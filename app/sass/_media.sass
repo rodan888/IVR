@@ -1,0 +1,417 @@
+@import "bourbon"
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	
+	/*Disable Animation on Mobile Devices*/
+	.animated
+		/*CSS transitions*/
+		-o-transition-property: none !important
+		-moz-transition-property: none !important
+		-ms-transition-property: none !important
+		-webkit-transition-property: none !important
+		transition-property: none !important
+		/*CSS transforms*/
+		-o-transform: none !important
+		-moz-transform: none !important
+		-ms-transform: none !important
+		-webkit-transform: none !important
+		transform: none !important
+		/*CSS animations*/
+		-webkit-animation: none !important
+		-moz-animation: none !important
+		-o-animation: none !important
+		-ms-animation: none !important
+		animation: none !important
+
+	header		
+		min-height: 121px
+		.btn-menu
+			display: block
+		.top-nav 
+			padding-top: 30px
+			padding-bottom: 10px
+			.lang-switch
+				right: 0!important
+				width: 0
+				background-color: $white
+				padding-top: 0
+				height: 55px
+				overflow: hidden				
+				transition: width 0.5s
+				padding-left: 0px
+				border-top: 1px solid #EDEEF0
+				border-bottom: 1px solid #EDEEF0
+				box-shadow: 0 2px 2px #666
+				&.active
+					width: 100%					
+					padding-left: 10px
+				ul
+					li
+						display: inline-block
+						a
+							height: 55px
+							line-height: 55px
+							font-size: 16px
+							color: #333333
+							display: block
+							padding: 0 6px
+			nav 
+				position: absolute
+				width: 100%
+				background-color: $white
+				top: 10px
+				left: 0				
+				ul
+					li
+						display: none
+						width: 100%
+						text-align: left
+						line-height: 55px
+						height: 55px
+						border-top: 1px solid #EDEEF0
+						&:before,&:active,&.active:after
+							display: none
+						a
+							position: initial
+							text-align: left
+							padding-left: 10px
+							font-size: 16px
+							transform: none
+							color: #333333
+							&:before
+								position: absolute
+								content: '\f105'
+								font: normal normal normal 14px/1 FontAwesome
+								top: 57%
+								right: 15px
+								font-size: 30px
+								line-height: 16px
+								text-align: right
+								color: #333333
+								width: 20px
+								height: 24px
+								margin-top: -12px
+						&:last-child
+							display: block!important
+							position: absolute
+							top: -120px
+							height: 30px
+							left: 0
+							width: 100%
+							max-width: 400px
+							font-size: 12px
+							&:after
+								display: none
+							a
+								width: 100%
+								left: 0
+								line-height: 30px
+								font-size: 13px
+								text-align: center
+								padding-right: 22px
+								&:before
+									right: 15px
+									top: 19px
+									font-size: 22px
+	#top_slider
+		background-color: $white
+	.top_slider 
+		&.inner
+			.item
+				padding: 40px 15px 50px
+				.img-wrap
+					position: relative!important
+					display: block
+					margin: 0px auto 25px
+					top: initial
+					left: initial
+				.descr
+					p
+						margin-top: 0
+		.owl-buttons
+			width: 100%!important
+			display: none
+		.owl-pagination
+			.owl-page
+				span					
+					border: 1px solid #656565
+				&:hover,&.active
+					span
+						background-color: #656565!important
+		.item
+			img
+				height: 190px
+			.descr
+				transform: none
+				position: initial
+				width: 100%
+				max-width: 100%
+				padding: 20px 10px
+				p
+					font-size: 18px
+					line-height: 30px
+					margin-top: 30px
+				.btn
+					display: block
+					margin: 10px auto 20px
+					max-width: 170px
+	.prise-item p
+		padding-right: 10px
+	.tabs .tabs-nav
+		text-align: center
+	#instityte
+		margin-top: 40px
+	#top-b
+		background-size: auto 100%
+		height: 80px
+		// margin-bottom: 40px
+		background-position: bottom center
+		.title-b
+			height: 80px
+	ul.bread
+		display: none
+	#therapy .descr, #team .descr,
+	.institute-descr .descr
+		border-bottom: none
+	#therapy .descr ul li
+		padding-left: 10px
+
+	#contact-line
+		background-color: #EDEEF0!important
+		min-height: initial
+		padding: 0
+		.mob-contact
+			display: block
+			position: relative
+			cursor: pointer
+			&.active:before
+				width: 100%
+			&:before
+				position: absolute
+				content: ""
+				width: 0
+				height: 2px
+				bottom: 0
+				right: 0
+				background-color: #707070
+				transition: width 0.5s
+			+ .container
+				position: absolute
+				width: 100%
+				top: 54px
+				left: 0
+				background-color: $footBg
+				z-index: 100
+				.col-md-2
+					display: none
+					&:last-child
+						padding-bottom: 20px
+						/* box-shadow: 0 2px 2px #666; */
+						button
+							margin: 0 auto
+
+		&.rehab
+			text-align: center
+			.col-md-2
+				margin-top: 15px
+			.btn
+				margin: 20px auto
+		.item
+			margin-bottom: 20px
+		.popup-btn
+			display: block
+			margin: 0 auto
+
+	.mobile-slider
+		.owl-controls
+			.owl-buttons 
+				div
+					top: 8px
+					&.owl-prev
+						left: 15px
+					&.owl-next
+						right: 15px
+					i
+						font-size: 44px!important
+	#result
+		.owl-carousel
+			width: auto
+		.owl-controls
+			.owl-buttons 
+				div
+					top: 135px
+	#lever ul li
+		padding-left: 0
+		text-align: center
+		padding: 20px 0
+		margin-bottom: 0
+		i,img
+			position: initial
+			display: block
+			margin: 0 auto 10px
+			text-align: center
+			transform: none			
+	.advantages
+		.a-item
+			.wrap
+				margin-top: 10px
+			i,img,p
+				position: initial
+				display: block
+				margin: 0 auto 10px
+				text-align: center
+				transform: none			
+	#method
+		h2, .btn-wrap
+			padding-left: 15px
+		.item
+			p
+				text-align: center
+				padding: 0 10px
+				img,i
+					position: initial
+					display: block
+					margin: 0 auto 10px
+	.section
+		padding-top: 0
+	.title
+		margin-top: 30px
+		margin-bottom: 20px
+	#backbone .b-item, #course .b-item, #offer .b-item
+		padding: 0
+
+	#backbone,#how
+		.btn
+			text-align: left
+			padding-left: 0
+			&:before
+				// right: 5px!important
+
+	.top
+		background-size: auto 190px
+		background-position: top right
+		padding-top: 190px
+		.descr-wrap 
+			.descr
+				transform: none
+				width: 100%
+				position: initial
+	#info 	
+		padding: 40px 0
+		&.inner
+			padding: 30px 0
+			.content-info
+				padding-left: 100px
+				i
+					top: 40px
+					left: 14px
+		.clrp
+			padding: 0 15px
+		.content-info
+			padding: 15px
+			padding-top: 5px
+			i
+				top: 15px
+				left: 15px
+			h3
+				padding-left: 80px
+				margin-bottom: 25px
+	#history 
+		.img-wrap,.text
+			width: 100%
+			position: initial
+			transform: none
+		.text
+			padding: 20px 10px
+	#how
+		.item-h
+			min-height: auto
+
+	footer
+		padding-top: 75px
+		.logo
+			display: none
+		.nav-wrap
+			padding-left: 0
+			>div
+				display: none
+			.foot-nav
+				display: block
+				padding-left: 0
+				.nav
+					a
+						text-transform: uppercase
+						line-height: 27px
+		.social-wrap
+			p
+				display: none
+			.social
+				position: absolute
+				width: 100%
+				left: 0
+				top: -238px
+				margin-top: 0
+		.copy
+			font-size: 16px
+
+
+
+
+
+
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	header
+		.top-nav 
+			.logo.rehub 
+				img
+					width: 250px
+	/**/
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
