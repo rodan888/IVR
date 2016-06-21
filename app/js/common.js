@@ -129,44 +129,6 @@ $(function() {
 			pageAjax.eq(offset).addClass('active');
 		});
 	}); 
-	
-
-	// jQuery( '.top_slider' ).sliderPro({
-	// 	width: $(window).width(),
-	// 	height: 410,
-	// 	arrows: true,
-	// 	buttons: true,
-	// 	waitForLayers: true,	
-	// 	touchSwipe: true,		
-	// 	autoplay: false,
-	// 	autoScaleLayers: false,
-	// 	breakpoints: {
-	// 		500: {
-	// 			thumbnailWidth: 120,
-	// 			thumbnailHeight: 50
-	// 		}
-	// 	}
-	// });
-
-	// $(window).resize(function(event) {
-	// 		jQuery( '.top_slider' ).sliderPro({
-	// 		width: $(window).width(),
-	// 		height: 410,
-	// 		arrows: true,
-	// 		buttons: true,
-	// 		waitForLayers: true,	
-	// 		touchSwipe: false,		
-	// 		autoplay: false,
-	// 		autoScaleLayers: false,
-	// 		breakpoints: {
-	// 			500: {
-	// 				thumbnailWidth: 120,
-	// 				thumbnailHeight: 50
-	// 			}
-	// 		}
-	// 	});		
-	// });
-
 	jQuery( '.slider-inner' ).sliderPro({
 		height: 515,
 		arrows: true,
@@ -182,8 +144,6 @@ $(function() {
 			}
 		}
 	});
-
-
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 

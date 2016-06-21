@@ -1,5 +1,5 @@
 <section id="review">
-<h2 class="title">Отзыви</h2>
+<h2 class="title">Отзывы</h2>
 
 	<div class="review">
 		<div class="block-title">
