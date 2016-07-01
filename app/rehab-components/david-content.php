@@ -65,17 +65,12 @@
 
 						<div class="item">
 							<h2 class="title rehab">Укрепление и реабилитация позвоночника David Spine Concept</h2>
-							<div class="slider-inner inner rehab">
-								<div class="sp-slides">
-
-									<div class="sp-slide">
-										<img src="../img/david-slider.jpg" alt="foto">											        
-									</div>
-
-									<div class="sp-slide">											
-										<img src="../img/david-slider2.jpg" alt="foto">
-									</div>
-
+							<div class="top_slider inner singl rehab">
+								<div class="item">
+									<img src="../img/david-slider.jpg" alt="foto">			
+								</div>
+								<div class="item">
+									<img src="../img/david-slider.jpg" alt="foto">	
 								</div>
 							</div>
 							<ul>
@@ -93,17 +88,12 @@
 							<h2 class="title rehab">Реабилитация суставов нижних и
 								верхних конечностей после травм 
 								и операций David Shoulder, Hip & Knee Concept</h2>
-								<div class="slider-inner inner rehab">
-									<div class="sp-slides">
-
-										<div class="sp-slide">
-											<img src="../img/david-slider.jpg" alt="foto">											        
-										</div>
-
-										<div class="sp-slide">											
-											<img src="../img/david-slider2.jpg" alt="foto">
-										</div>
-
+								<div class="top_slider inner singl rehab">
+									<div class="item">
+										<img src="../img/david-slider.jpg" alt="foto">	
+									</div>
+									<div class="item">
+										<img src="../img/david-slider.jpg" alt="foto">	
 									</div>
 								</div>
 								<ul>

@@ -21,8 +21,8 @@
             <div class="container">
                 <div class="row">
                     <?php include 'rehab-components/equipment-advan.php' ?>           
-                    <?php include 'rehab-components/safe-david.php' ?>            
-                    <?php include 'rehab-components/popup-block.php' ?>           
+                    <?php include 'rehab-components/oborud-list.php' ?>           
+                   
                 </div>
             </div>
             

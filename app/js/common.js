@@ -17,8 +17,16 @@ $(function() {
 		singleItem:true
   	});   
 
+  	$('.slider-review').owlCarousel({
+  		navigationText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+		navigation : true,
+		slideSpeed : 300,
+		paginationSpeed : 400,		
+		pagination: true,
+		items: 2
+  	});
 
-	 jQuery("form").submit(function() { //Change
+  	jQuery("form.mail").submit(function() { //Change
 			var th = jQuery(this),
 			redirect = th.data('redirect');
 			jQuery.ajax({

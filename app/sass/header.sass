@@ -139,6 +139,12 @@ header
 		background-color: $white	
 		box-shadow: 0 1px 6px #666
 		z-index: 10000
+		&.rehab
+			nav
+				ul
+					li.active
+						&:after
+							background-color: $mainO
 		.logo
 			display: block
 			padding-top: 10px
@@ -168,8 +174,7 @@ header
 		.col-md-10
 			position: initial
 		nav
-			text-align: right
-			// padding-right: 40px
+			text-align: right			
 			ul
 				li
 					display: inline-block
