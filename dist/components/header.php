@@ -18,10 +18,29 @@
 				<nav>
 					<ul>
 						<li><a href="../instityte.php">Институт</a></li>
-						<li class="active"><a href="../price.php">Методы лечения и цены</a></li>
+						<li class="active"><a href="../price.php">Методы лечения и цены</a>
+							<ul class="ul">
+								<li class="first">
+									<a class="ripple" href="#">Лечебный массаж</a>
+								</li>
+								<li>
+									<a class="ripple" href="#">Коррекция позвоночника</a>
+								</li>
+								<li>
+									<a class="ripple" href="#">Метод короткого рычага</a>
+								</li>
+								<li>
+									<a class="ripple" href="#">Ударно-волновая терапия</a>
+								</li>
+								<li class="last">
+									<a class="ripple" href="#">Ультразвуковая терапия</a>
+								</li>                               
+                            </ul>
+						</li>
 						<li><a href="../chto-mu-lechim.php">Что мы лечим</a></li>
-						<li><a href="#">Программы клиентам</a></li>
-						<li><a href="../contacts.php">Наши врачи</a></li>
+						<!-- <li><a href="#">Программы клиентам</a></li> -->
+						<li><a href="../vrachi.php">Наши врачи</a></li>
+						<li><a href="../contacts.php">Контакты</a></li>
 						<li><a href="../index-rehab.php">Центр укрепления позвоночника и суставов при Институте</a></li>
 					</ul>	
 				</nav>						

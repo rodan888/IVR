@@ -1,4 +1,4 @@
-<div class="popup" id="popupForm">
+<div class="popup rehab" id="popupForm">
 	<form class="form" action="form.php">
 		<h2>Перезвоните мне</h2>
 		<p>Мы свяжемся с вами, ответим на все вопросы 

@@ -7,6 +7,8 @@ $(function() {
 		});
 	};	
 
+	
+
 	$("#top_slider, .top_slider").owlCarousel({
 	 	navigationText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
 		navigation : true,
@@ -248,9 +250,20 @@ $(function() {
 	};
 	popup();
 
+	function titleLength(){
+		var title   = $('#top-b h1'),
+			titleC  = title.text(),
+			tLength = titleC.length;	
+
+		if (tLength > 30) {
+			title.css('font-size','17px');
+		};
+	};
+
 	if (winWidth() < 768) {
 	  	mobSlider('#method .col-md-12','.col-md-4');
 	  	mobSlider('#result .row','.col-md-3');
+		titleLength();
   	};
 
 });

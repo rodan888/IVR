@@ -41,9 +41,14 @@ body textarea:required:valid
 				font-size: 20px
 
 
+.fb-line
+	min-height: 45px
+	text-align: center	
+	.fb-buttons-wrap
+		padding-bottom: 10px
+	p
+		line-height: 30px
 
-
-//Custom Styles Here
 #contact-line
 	color: $textColor
 	text-transform: uppercase
@@ -67,7 +72,7 @@ body textarea:required:valid
 			i
 				font-size: 19px					
 	&.home
-		background-color: $white
+		background-color: $footBg
 		padding: 25px 0 18px
 		min-height: 80px
 	&.rehab
@@ -99,9 +104,11 @@ body textarea:required:valid
 			color: $mainG
 			left: 0
 			top: 50%
-			font-size: 30px
-			margin-top: -24px
+			font-size: 30px			
 			text-transform: uppercase
+			transform: translateY(-50%)
+			-moz-transform: translateY(-50%)
+			-o-transform: translateY(-50%)
 		&.rehab
 			h1
 				color: $mainO
@@ -117,6 +124,23 @@ body textarea:required:valid
 			top: 0
 			left: 0
 			font-size: 100px
+
+#ajax-page
+	form
+		margin-top: 30px
+		p
+			margin-bottom: 15px
+		input
+			display: inline-block
+			border: 1px solid #DADADA
+			height: 50px
+			-webkit-border-radius: 8px
+			border-radius: 8px
+			text-indent: 10px
+			width: 100%
+			font-size: 12px
+			margin-bottom: 20px
+			background-color: $white
 
 #method
 	background-color: $mainG
@@ -385,6 +409,71 @@ body textarea:required:valid
 				margin: 0 15px 0 5px
 		.dpd-item-wrap
 			display: none
+.doctors
+	.dropdown-prise 
+		.dpd-wrap 
+			.dpd-item-wrap	
+				display: block
+	.title
+		margin-bottom: 15px
+	.descr-doctor
+		max-width: 800px
+		p
+			margin-bottom: 10px
+	.main-doctor
+		position: relative
+		padding-right: 300px
+		img
+			position: absolute
+			top: 65px
+			right: 0
+		.advan
+			list-style-type: disc
+			list-style-position: outside
+			padding-left: 20px
+			color: #6B6C6C
+			li
+				margin-bottom: 10px
+	.group-foto
+		position: relative
+		&:hover
+			.tooltip
+				opacity: 1
+				top: 220px
+		img
+			width: 100%
+		.tooltip
+			position: absolute
+			width: 310px
+			background-color: rgba(101,101,101, .8)
+			padding: 15px
+			text-align: left
+			top: 320px
+			left: 235px
+			opacity: 0
+			transition: all 0.3s
+			-moz-transition: all 0.3s
+			&:before
+				content: ""	
+				position: absolute	
+				width: 0
+				height: 0
+				top: -25px
+				left: 50%
+				margin-left: -8px
+				border-style: solid
+				border-width: 0 16px 25.3px 16px
+				border-color: transparent transparent rgba(101,101,101, .8) transparent
+			h4
+				color: $white
+				font-size: 16px
+				font-weight: 100
+				font-family: "PTSansRegular", sans-serif
+				margin-bottom: 10px
+			i
+				color: $white
+
+
 
 
 
@@ -400,11 +489,15 @@ iframe
 			color: $mainO
 		.review
 			.block-title
-				h3
+				h5
 					span:first-child
 						color: $mainO
 .review
 	margin-bottom: 50px
+	&.rehab
+		h5
+			span:first-child
+				color: $mainO!important
 	.block-title
 		position: relative
 		padding-left: 73px
@@ -422,7 +515,7 @@ iframe
 			overflow: hidden			
 			img
 				width: 100%
-		h3
+		h5
 			font-size: 14px
 			line-height: 18px
 			font-family: 'PTSansRegular'
@@ -503,7 +596,25 @@ iframe
 	.b-item
 		h3,p.descr
 			background-color: #656565	
-			color: $white			
+			color: $white	
+.rehab		
+	.coments
+		.title
+			color: $mainO
+		.btn
+			color: $mainO
+			border-color: $mainO
+			&:hover
+				background-color: $mainO
+				color: $white	
+		#comments-wrapper	
+			.ticket-comment-author
+				color: $mainO!important
+			.comment-reply
+				a
+					color: $mainO!important
+					border-color: $mainO!important
+					
 .blog-inner
 	&.rehab
 		.cont-wrap 
@@ -516,15 +627,6 @@ iframe
 					h3 
 						span:first-child
 							color: $mainO
-		.coments
-			.title
-				color: $mainO
-			.btn
-				color: $mainO
-				border-color: $mainO
-				&:hover
-					background-color: $mainO
-					color: $white
 	.cont-wrap 
 		.info-block 
 			border-bottom: 1px solid #ccc
@@ -568,6 +670,13 @@ iframe
 			&:after
 				bottom: 0
 				right: -5px
+.review-list
+	.review
+		.block-title
+			padding-left: 0
+			img
+				display: none
+
 .sidebar
 	#news,#review
 		position: relative
@@ -827,6 +936,15 @@ footer
 	background-color: rgba(237,238,240, .8)
 	z-index: 10000
 	background-size: cover	
+	&.rehab
+		h5
+			color: $mainO!important
+		.btn
+			background-color: $mainO
+			border: 2px solid $mainO
+			&:hover
+				background-color: $white
+				color: $mainO
 	.upload
 		line-height: 55px
 		color: $mainG
@@ -942,10 +1060,11 @@ footer
 					&:hover
 						background-color: $white
 
-		h2
+		h5
 			margin-bottom: 15px
 			text-align: center
 			color: $mainG
+			font-size: 24px
 		p
 			color: $textColor
 			text-align: left			
@@ -1001,20 +1120,29 @@ footer
 	ul
 		li
 			color: $mainG
-			border-bottom: 1px solid $textColor
-			line-height: 52px
+			border-bottom: 1px solid $textColor			
+			height: 52px
 			font-size: 20px
 			font-family: 'FregatRegular'
+			position: relative
 			&.active
 				a
 					color: $mainG
 			a
-				display: block			
+				display: block
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translateY(-50%)			
+				-webkit-transform: translateY(-50%)			
+				-moz-transform: translateY(-50%)			
+				-o-transform: translateY(-50%)			
 				color: $textColor
 				transition: all 0.3s
+				line-height: 25px
 				&:hover
 					color: $mainG
-					padding-left: 15px
+					left: 15px
 	&.rehab
 		ul
 			li
@@ -1080,32 +1208,34 @@ footer
 	background-color: #EBEBEB
 	margin: 50px 0
 	>div
-		position: absolute
-	.text
-		top: 50%
-		left: 0
-		transform: translateY(-50%)
-		-webkit-transform: translateY(-50%)
-		-moz-transform: translateY(-50%)
-		-o-transform: translaeY(-50%)
+		// position: absolute
+	.text		
 		text-align: left
 		width: 50%		
-		padding: 0 20px
+		padding: 10px 20px
+		position: initial
 		h3
 			text-transform: uppercase
 			color: $black
 			margin-bottom: 20px
 			font-family: 'FregatRegular'
 			font-weight: 100
-	.img-wrap
+	.img-wrap		
+		width: 50%
+		height: 100%
+		overflow: hidden
+		position: absolute
 		top: 0
 		right: 0
-		width: 50%
-		height: 330px
-		overflow: hidden
 		img
 			width: 100%
-			min-height: 330px
+			position: absolute
+			min-height: 50%
+			left: 0
+			&:first-child
+				top: 0
+			&:last-child
+				top: 50%
 
 #how
 	.item-h
@@ -1144,6 +1274,7 @@ footer
 		color: $textColor
 		font-size: 14px
 		margin-bottom: 30px
+		min-height: 90px
 		i,img
 			font-size: 100px
 			width: 100px
@@ -1157,6 +1288,10 @@ footer
 			font-size: 16px
 			color: $black
 			margin-bottom: 15px
+#top_slider
+	.item
+		img
+			width: 100%
 #sliders
 	margin-top: 60px
 	.item
@@ -1463,6 +1598,7 @@ footer
 	ul
 		list-style-type: disc
 		list-style-position: inside
+		color: #6B6C6C
 
 .top_slider,.slider-review
 	&.inner
@@ -1754,6 +1890,8 @@ footer
 					border-style: solid
 					border-width: 0 10px 20px
 					border-color: transparent transparent #F0F0F0
+				img
+					width: 100%
 			.ticket-comment-header
 				position: relative
 				padding-left: 56px
