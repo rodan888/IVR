@@ -39,8 +39,7 @@
 						</li>
 						<li><a href="../chto-mu-lechim.php">Что мы лечим</a></li>
 						<!-- <li><a href="#">Программы клиентам</a></li> -->
-						<li><a href="../vrachi.php">Наши врачи</a></li>
-						<li><a href="../contacts.php">Контакты</a></li>
+						<li><a href="../vrachi.php">Наши врачи</a></li>					
 						<li><a href="../index-rehab.php">Центр укрепления позвоночника и суставов при Институте</a></li>
 					</ul>	
 				</nav>						
