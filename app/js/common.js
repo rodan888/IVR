@@ -125,6 +125,7 @@ $(function() {
 	pageAjax.on('click', function(){
 		var url       = $(this).data('ajax'),
 				offset    = $(this).index(),
+				filter    = $(this).data('filter'),
 				contBlock = $('#ajax-page .container-fluid'),
 				speener   = $('.speener');
 
@@ -132,7 +133,7 @@ $(function() {
 		contBlock.html('');
 
 		speener.css('display','block');
-		$.get(url+'?offset='+offset, function(data){	
+		$.get(url+'?offset='+offset+'&filter='+filter, function(data){	
 			speener.fadeOut('fast');
 			contBlock.append(data);	
 			mapInit();		

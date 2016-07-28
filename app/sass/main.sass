@@ -479,12 +479,12 @@ body textarea:required:valid
 	.group-foto
 		position: relative
 		&:hover
-			.tooltip
+			.tooltip-main
 				opacity: 1
 				top: 220px
 		img
 			width: 100%
-		.tooltip
+		.tooltip-main
 			position: absolute
 			width: 310px
 			background-color: rgba(101,101,101, .8)
@@ -521,8 +521,16 @@ body textarea:required:valid
 
 iframe
 	width: 100%
+#ajax-page
+	.review		
+		min-height: 160px
+		margin-bottom: 30px
 #review
 	clear: both
+	&.inner
+		.review		
+			min-height: 160px
+			margin-bottom: 30px
 	.btn
 		text-align: left
 		color: $black
@@ -535,6 +543,7 @@ iframe
 				h5
 					span:first-child
 						color: $mainO
+	
 .review
 	margin-bottom: 50px
 	min-height: 260px
@@ -1211,7 +1220,7 @@ footer
 					color: $mainO
 .side-nav
 	.ajax-nav
-		li.page-ajax
+		li
 			color: $textColor
 			transition: all 0.3s
 			cursor: pointer		
@@ -1362,12 +1371,11 @@ footer
 			max-width: 100%!important
 			max-height: 515px!important			
 		ul
-			margin-top: 30px
+			margin-top: -45px
 			li
 				color: $textColor
 				margin-bottom: 10px
-				font-size: 14px
-				list-style-type: disc
+				font-size: 16px
 				list-style-position: inside
 
 .problem-decision
@@ -1698,6 +1706,8 @@ footer
 		transition: all 0.3s
 		-moz-transition: all 0.3s
 .conten-treat
+	color: #6B6C6C
+	font-size: 16px
 	p
 		margin-bottom: 20px
 	h2,h3,h4
