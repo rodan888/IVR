@@ -215,6 +215,7 @@ body textarea:required:valid
 			position: absolute
 			top: 0
 			left: 0
+			width: 100px
 	.btn:after
 		background-color: $white
 
@@ -451,6 +452,92 @@ body textarea:required:valid
 				margin: 0 15px 0 5px
 		.dpd-item-wrap
 			display: none
+.maska-tooltip
+	position: relative
+	p
+		position: absolute
+		top: 150px
+		width: 12%
+		height: 200px
+		span
+			width: 100%			
+			top: 325px
+			transition: all 0.3s
+			-moz-transition: all 0.3s
+			z-index: -1
+			opacity: 0
+			position: absolute	
+			padding: 0 5px
+			color: $white			
+			min-height: 50px
+			background-color: rgba(101,101,101, .9)
+			&:after
+				content: ""	
+				position: absolute	
+				width: 0
+				height: 0
+				left: 50%
+				top: -25px
+				margin-left: -16px	
+				border-style: solid
+				border-width: 0 16px 25.3px 16px
+				border-color: transparent transparent rgba(101,101,101, .9) transparent
+			&:before
+				position: absolute
+				content: attr(data-tooltip)
+				width: 100%
+				left: 0
+				top: 50px				
+				font-style: italic
+				font-weight: 100
+				padding: 10px 5px
+				text-align: left		
+				font-size: 14px		
+				font-family: 'PTSansRegular',sans-serif
+				color: $white									
+				background-color: rgba(101,101,101, .9)				
+		&:hover
+			span
+				top: 200px
+				opacity: 1
+				z-index: 10		
+		&:nth-child(1)
+			left: 8%
+		&:nth-child(2)
+			left: 20%
+		&:nth-child(3)
+			left: 32%
+		&:nth-child(4)
+			left: 44%
+		&:nth-child(5)
+			display: none
+			left: 56%
+		&:nth-child(6)
+			left: 68%
+		&:nth-child(7)
+			left: 80%
+
+		&:nth-child(8)
+			left: 20%
+			width: 15%
+			top: 350px
+		&:nth-child(9)
+			left: 35%
+			width: 15%
+			top: 350px
+		&:nth-child(10)
+			left: 50%
+			width: 15%
+			top: 350px
+		&:nth-child(11)
+			left: 65%
+			width: 15%
+			top: 350px
+		
+
+
+			
+
 .doctors
 	.dropdown-prise 
 		.dpd-wrap 
@@ -478,34 +565,34 @@ body textarea:required:valid
 				margin-bottom: 10px
 	.group-foto
 		position: relative
-		&:hover
-			.tooltip-main
-				opacity: 1
-				top: 220px
+		// &:hover
+		// 	.tooltip-main
+		// 		opacity: 1
+		// 		top: 220px
 		img
 			width: 100%
-		.tooltip-main
-			position: absolute
-			width: 310px
-			background-color: rgba(101,101,101, .8)
-			padding: 15px
-			text-align: left
-			top: 320px
-			left: 235px
-			opacity: 0
-			transition: all 0.3s
-			-moz-transition: all 0.3s
-			&:before
-				content: ""	
-				position: absolute	
-				width: 0
-				height: 0
-				top: -25px
-				left: 50%
-				margin-left: -8px
-				border-style: solid
-				border-width: 0 16px 25.3px 16px
-				border-color: transparent transparent rgba(101,101,101, .8) transparent
+		// .tooltip-main
+		// 	position: absolute
+		// 	width: 310px
+		// 	background-color: rgba(101,101,101, .8)
+		// 	padding: 15px
+		// 	text-align: left
+		// 	top: 320px
+		// 	left: 235px
+		// 	opacity: 0
+		// 	transition: all 0.3s
+		// 	-moz-transition: all 0.3s
+		// 	&:before
+		// 		content: ""	
+		// 		position: absolute	
+		// 		width: 0
+		// 		height: 0
+		// 		top: -25px
+		// 		left: 50%
+		// 		margin-left: -8px
+		// 		border-style: solid
+		// 		border-width: 0 16px 25.3px 16px
+		// 		border-color: transparent transparent rgba(101,101,101, .8) transparent
 			h4
 				color: $white
 				font-size: 16px
@@ -1179,6 +1266,24 @@ footer
 			border-radius: 50%
 
 .side-nav
+	.side-toggle
+		>li
+			position: relative
+			color: $textColor
+			line-height: 52px
+			cursor: pointer
+			&.active
+				color: $mainG
+			&:first-child
+				ul
+					display: block
+			ul
+				display: none
+				padding-left: 15px
+				li
+					font-size: 16px!important
+					&:last-child
+						border-bottom: none
 	h3
 		color: #57585B
 		text-transform: uppercase
@@ -1187,7 +1292,7 @@ footer
 		li
 			color: $mainG
 			border-bottom: 1px solid $textColor			
-			height: 52px
+			min-height: 52px
 			font-size: 20px
 			font-family: 'FregatRegular'
 			position: relative
@@ -1439,7 +1544,7 @@ footer
 	padding-left: 110px
 	position: relative
 	padding-right: 0
-	i
+	i,img
 		font-size: 10px
 		position: absolute
 		top: 0
@@ -1989,8 +2094,6 @@ footer
 		min-width: 380px
 		img
 			width: 100%
-
-
 
 
 .coments

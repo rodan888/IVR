@@ -119,7 +119,17 @@ $(function() {
 	};
 	mapInit();
 
-	var pageAjax = $('.ajax-nav li');
+	var ajaxToggle = $('.side-toggle>li');
+	ajaxToggle.on('click',function(){
+		ajaxToggle.removeClass('active');
+		ajaxToggle.not($(this)).find('.ajax-nav')
+			.slideUp('fast');
+		$(this).addClass('active')
+			.find('.ajax-nav')
+			.slideDown('fast');
+	});
+
+	var pageAjax = $('.ajax-nav li, .custom-button');
 	pageAjax.eq(0).addClass('active');
 
 	pageAjax.on('click', function(){
