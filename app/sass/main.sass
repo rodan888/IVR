@@ -58,7 +58,8 @@ body textarea:required:valid
 	text-align: left
 .center
 	text-align: center	
-
+.full-img
+	width: 100%
 .top
 	min-height: 410px
 	background-repeat: no-repeat
@@ -94,7 +95,7 @@ body textarea:required:valid
 	line-height: 18px
 	min-height: 60px
 	padding: 10px 0
-	font-family: 'FregatBold'
+	font-family: 'FregatRegular'
 	background-color: $footBg
 	position: relative
 	.mob-contact
@@ -429,6 +430,7 @@ body textarea:required:valid
 		padding-right: 155px
 		font-family: 'PTSansBold'
 		background-color: #F1F2F2
+		min-height: 44px
 		span
 			position: absolute
 			top: 10px
@@ -452,6 +454,9 @@ body textarea:required:valid
 				margin: 0 15px 0 5px
 		.dpd-item-wrap
 			display: none
+.foto-descr
+	font-size: 20px
+	color: $textColor
 .maska-tooltip
 	position: relative
 	p
@@ -460,7 +465,7 @@ body textarea:required:valid
 		width: 12%
 		height: 200px
 		span
-			width: 100%			
+			width: 200px		
 			top: 325px
 			transition: all 0.3s
 			-moz-transition: all 0.3s
@@ -496,21 +501,20 @@ body textarea:required:valid
 				font-family: 'PTSansRegular',sans-serif
 				color: $white									
 				background-color: rgba(101,101,101, .9)				
-		&:hover
+		&:hover,&.active
 			span
 				top: 200px
 				opacity: 1
 				z-index: 10		
 		&:nth-child(1)
-			left: 8%
+			left: 4%
 		&:nth-child(2)
-			left: 20%
+			left: 16%
 		&:nth-child(3)
-			left: 32%
+			left: 27%
 		&:nth-child(4)
-			left: 44%
+			left: 41%
 		&:nth-child(5)
-			display: none
 			left: 56%
 		&:nth-child(6)
 			left: 68%
@@ -764,6 +768,7 @@ iframe
 					border-color: $mainO!important
 					
 .blog-inner
+	padding-top: 0
 	&.rehab
 		.cont-wrap 
 			.info-block 	
@@ -785,6 +790,12 @@ iframe
 				padding: 3px 5px
 				border-radius: 4px
 				color: #fff
+		a
+			color: $black
+			&:hover
+				text-decoration: underline
+		strong
+			font-family: 'PTSansBold'
 	#news
 		padding-top: 35px
 		.n-item
@@ -982,9 +993,12 @@ iframe
 		margin: 0 auto 25px
 		img
 			position: absolute
-			top: 0
-			left: 0
+			top: 50%
+			left: 50%
 			height: 100%
+			transform: translate(-50%,-50%)
+			-moz-transform: translate(-50%,-50%)
+			-webkit-transform: translate(-50%,-50%)
 			min-width: 100%
 
 #therapy
@@ -1272,11 +1286,29 @@ footer
 			color: $textColor
 			line-height: 52px
 			cursor: pointer
+			&:before
+				position: absolute
+				content: "\f078"
+				width: 20px
+				height: 20px
+				right: 0	
+				top: 16px
+				font-size: 16px
+				font-family: 'FontAwesome'
+				line-height: 20px	
+				z-index: -1
 			&.active
 				color: $mainG
-			&:first-child
+				&:before
+					content: "\f077"
+			&:first-child			
 				ul
 					display: block
+			&:last-child:before
+				display: none
+			.link-toggle
+				display: block
+				z-index: 10
 			ul
 				display: none
 				padding-left: 15px
@@ -1335,6 +1367,16 @@ footer
 				padding-left: 15px
 			&.active
 				color: $mainG
+			span
+				position: absolute
+				line-height: 24px
+				left: 0
+				top: 50%				
+				transition: left 0.3s
+				transform: translateY(-50%)
+				&:hover
+					color: $mainG
+					left: 15px
 
 #info
 	background-color: $orange
@@ -1447,6 +1489,8 @@ footer
 		font-size: 14px
 		margin-bottom: 30px
 		min-height: 90px
+		i
+			opacity: 0.6
 		i,img
 			font-size: 100px
 			width: 100px
@@ -1687,11 +1731,22 @@ footer
 				right: 0
 	#kyiv	
 		display: block
-
+.blog-inner-title
+	color: $mainG
+	border-bottom: 1px solid #ccc
+.card-wrap
+	font-size: 0
+	>div
+		display: inline-block
+		vertical-align: top
+		padding: 0
+		width: 50%
+		font-size: 16px
+		padding-right: 5px
 .card
 	margin-top: 30px
 	padding: 0 10px
-	min-height: 490px
+	min-height: 490px	
 	h3
 		text-transform: uppercase
 		margin: 15px 0
