@@ -18,7 +18,7 @@
 				<nav>
 					<ul>
 						<li><a href="../instityte.php">Институт</a></li>
-						<li class="active"><a href="../price.php">Методы лечения и цены</a>
+						<li><a href="../price.php">Методы лечения и цены</a>
 							<ul class="ul">
 								<li class="first">
 									<a class="ripple" href="#">Лечебный массаж</a>

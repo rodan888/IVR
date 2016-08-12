@@ -5,16 +5,56 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
 	/**/
+	header
+		.top-nav
+			nav 
+				ul 
+					li
+						width: 120px
+						&:last-child
+							width: 213px
 
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
 	/**/
+	.maska-tooltip p
+		display: none!important
+	.group-foto i.foto-descr
+		display: none
+	.institute-descr 
+		.descr
+			min-height: 170px
+	#how .item-h
+		min-height: 300px
+	#contact-line
+		.col-md-2
+			padding: 0
+			margin-bottom: 10px
+	.popup-block .img-wrap a
+		display: none
+	.top_slider .owl-controls .owl-buttons
+		width: 100%
+		>div
+			top: -125px
+	header 
+		min-height: 161px
+		.top-nav 
+			.logo	
+				text-align: center
+				img
+					width: 160px
+	#review
+		.review
+				min-height: 180px
+				margin-bottom: 20px
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	
+	img
+		max-width: 100%
+		height: auto
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -35,6 +75,10 @@
 		-o-animation: none !important
 		-ms-animation: none !important
 		animation: none !important
+	#how .item-h
+		min-height: 100px
+	#contact-line .col-md-2
+		padding: 0 15px
 	.doctors
 		.main-doctor
 			padding-right: 0
@@ -49,7 +93,11 @@
 			display: block
 		.top-nav 
 			padding-top: 30px
-			padding-bottom: 10px
+			padding-bottom: 10px			
+			.logo	
+				text-align: left
+				img
+					width: 220px
 			.lang-switch
 				right: 0!important
 				width: 0
@@ -81,16 +129,21 @@
 				background-color: $white
 				top: 10px
 				left: 0				
-				ul
-					li
+				>ul
+					height: auto
+					padding-top: 0
+					>li
 						display: none
 						width: 100%
 						text-align: left
 						line-height: 55px
-						height: 55px
+						min-height: 55px
+						height: auto
 						border-top: 1px solid #EDEEF0
 						&:before,&:active,&.active:after
-							display: none
+							display: none		
+						&.visible
+							display: none!important			
 						a
 							position: initial
 							text-align: left
@@ -98,11 +151,13 @@
 							font-size: 16px
 							transform: none
 							color: #333333
+							&.active:before
+								content: '\f107'
 							&:before
 								position: absolute
 								content: '\f105'
 								font: normal normal normal 14px/1 FontAwesome
-								top: 57%
+								top: 31px
 								right: 15px
 								font-size: 30px
 								line-height: 16px
@@ -116,6 +171,7 @@
 							position: absolute
 							top: -120px
 							height: 38px
+							min-height: 38px
 							left: 0
 							width: 100%
 							max-width: 400px
@@ -127,12 +183,83 @@
 								left: 0
 								line-height: 19px
 								font-size: 13px
+								line-height: 38px
 								text-align: left
 								padding-right: 22px
 								&:before
 									right: 15px
-									top: 19px
+									top: 24px
 									font-size: 22px
+						ul
+							position: initial
+							width: 100%
+							display: none
+							opacity: 1
+							z-index: 10
+							&.visible
+								display: block
+								box-shadow: 0 2px 2px #666
+							li
+								line-height: 40px
+								a:before
+									top: 24px
+									font-size: 20px
+	.grafik .img-wrap, .popup-block .img-wrap
+		min-height: 235px
+		img
+			width: 100%
+			height: auto
+	.david-advant
+		.item
+			padding-left: 0
+			text-align: center
+			p
+				text-align: left
+			img
+				position: initial
+	.card-wrap>div
+		width: 100%
+	.oborud-item 
+		.img-wrap
+			min-width: 100%		
+		.descr
+			padding-right: 0
+			width: 100%
+	.problem-decision span:first-child
+		height: 60px
+		line-height: 50px
+		vertical-align: top
+		&:before
+			display: none
+	.item-problem
+		padding-right: 0
+		min-height: 145px
+	.item-decision
+		padding-left: 85px
+		img
+			width: 80px
+			left: -5px
+	.popup 
+		.form 
+			transform: none
+			margin-top: -245px
+			margin-left: -155px
+			width: 310px
+			p
+				display: none
+	#how
+		.item-h
+			padding-left: 90px
+			img
+				width: 80px
+			p
+				font-size: 14px
+	#course .b-item
+		height: 421px
+		.img-block
+			height: 165px!important
+			img
+				min-height: auto
 	#top_slider
 		background-color: $white
 	.top_slider 
@@ -160,7 +287,7 @@
 						background-color: #656565!important
 		.item
 			img
-				height: 190px
+				height: auto
 			.descr
 				transform: none
 				position: initial
@@ -170,7 +297,7 @@
 				p
 					font-size: 18px
 					line-height: 30px
-					margin-top: 30px
+					margin-top: 0px
 				.btn
 					display: block
 					margin: 10px auto 20px
@@ -241,7 +368,7 @@
 						button
 							margin: 0 auto
 		.item
-			margin-bottom: 20px
+			margin-bottom: 0px
 			min-height: 55px
 			text-align: left
 		.popup-btn
@@ -349,6 +476,10 @@
 			transform: none
 		.text
 			padding: 20px 10px
+		.img-wrap img
+			position: initial
+			height: auto
+			width: 100%
 	#how
 		.item-h
 			min-height: auto

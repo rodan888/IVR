@@ -64,12 +64,29 @@ $(function() {
 
 	// Dropdown lists start
 	$('.btn-menu').on('click',function(){
-		var navList = $('nav ul li'),
+		var navList = $('nav>ul>li'),
 			elHeight = navList.height();
+
 		$('.lang-switch').css('top', (navList.length-1) * elHeight + 121 +'px')
-			.toggleClass('active');;
+			.toggleClass('active');
+
+		if ($(this).hasClass('open-menu')) {
+			navList.find('ul.visible').removeClass('visible');
+			$('.lang-switch').removeClass('active');
+			navList.not(':last-child').removeClass('visible')
+				.slideUp('slow')
+				.find('a').removeClass('active');	
+		}else{
+			navList.not(':last-child').slideToggle('slow');
+		};		
+		$('nav>ul>li>a').not('.ripple').on('click', function(event){	
+			event.preventDefault();	
+			navList.not($(this).parent('li')).toggleClass('visible');
+			$(this).toggleClass('active').next().toggleClass('visible');
+			$('.lang-switch').toggleClass('active');
+		});
 		$(this).toggleClass('open-menu');
-		navList.not(':last-child').slideToggle('slow');
+
 	});	
 
 	$('.dpd-prise').on('click', function(){
@@ -88,34 +105,28 @@ $(function() {
 
 	function mapInit(){
 		$('.gmap').each(function(){
-			var container = this;
+		    var container = this;
+		    var latlng = new google.maps.LatLng(
+		        parseFloat($(container).data('lat')),
+		        parseFloat($(container).data('lng'))
+		    );
+		    var mapOptions = {
+		        zoom: parseInt($(container).data('zoom')),
+		        center: latlng,
+		        zoomControl: true,
+		        mapTypeControl: false,
+		        streetViewControl: false,
+		        scrollwheel: true,
+		        mapTypeId: google.maps.MapTypeId.ROADMAP
+		    };
+		    var map = new google.maps.Map(container, mapOptions);
 
-			var mapOptions = {
-				zoom: $(container).data('zoom'),
-				zoomControl: true,
-				mapTypeControl: false,
-				streetViewControl: false,
-			scrollwheel: false, //zoom on scroll
-			draggable: true,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-		var map = new google.maps.Map(container, mapOptions);
-		var geocoder = new google.maps.Geocoder();
-
-		geocoder.geocode(
-			{'address': $(container).data('address')},
-			function(results, status) {			
-				if (status === google.maps.GeocoderStatus.OK) {
-					new google.maps.Marker({
-						position: results[0].geometry.location,
-						map: map,
-						icon: $(container).data('marker')
-					});
-					map.setCenter(results[0].geometry.location);
-				}
-			}
-			);
-	});
+		    var marker = new google.maps.Marker({
+		        position: latlng,
+		        map: map,
+		        icon: $(container).data('marker')
+		    });
+		});
 	};
 	mapInit();
 
@@ -142,15 +153,16 @@ $(function() {
 		var url       = $(this).data('ajax'),
 				offset    = $(this).index(),
 				filter    = $(this).data('filter'),
+				parrent   = $(this).data('parrent'),
 				contBlock = $('#ajax-page .container-fluid'),
 				speener   = $('.speener');
 
 		pageAjax.removeClass('active');		
-		contBlock.html('');
+		contBlock.html(''); 
 		$(this).addClass('active');
 
 		speener.css('display','block');
-		$.get(url+'?offset='+offset+'&filter='+filter, function(data){	
+		$.get(url+'?offset='+offset+'&filter='+filter+'&parrent='+parrent, function(data){	
 			speener.fadeOut('fast');
 			contBlock.append(data);	
 			mapInit();		
