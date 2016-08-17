@@ -261,6 +261,8 @@ header
 						text-transform: uppercase																	
 					&:last-child 
 						width: 230px
+						a
+							padding: 0 10px
 						&:after
 							position: absolute
 							content: ''
@@ -298,12 +300,22 @@ header
 			right: -moz-calc( (100% - 1186px) / 2)
 			top: 0
 			line-height: 18px
-			height: 100px		
 			color: $mainG
-			padding-top: 18px
+			top: 50%
+			transform: translateY(-50%)
+			-moz-transform: translateY(-50%)
+			-webkit-transform: translateY(-50%)
+			-o-transform: translateY(-50%)
+			li.rehab
+				color: $mainO
+			li.centr
+				color: $mainG
+				font-size: 12px
+				text-transform: uppercase
 			a
 				color: $textColor
 				font-size: 12px
+				text-transform: uppercase
 	&.rehab
 		.top-nav
 			.logo

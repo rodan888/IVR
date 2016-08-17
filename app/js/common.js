@@ -62,6 +62,21 @@ $(function() {
 		return $(window).width();
 	};	
 
+	function htmlReplase(){
+		var el = $('#contact-line span'),
+			elL = el.length;
+
+		for(var i = 0; i<elL; i=i+1 ){
+			var tel = el.eq(i).data('p');
+			el.eq(i).html(tel);
+		};
+		console.log(elL);
+
+	};
+	
+
+	
+
 	// Dropdown lists start
 	$('.btn-menu').on('click',function(){
 		var navList = $('nav>ul>li'),
@@ -87,7 +102,7 @@ $(function() {
 		});
 		$(this).toggleClass('open-menu');
 
-	});	
+	});		
 
 	$('.dpd-prise').on('click', function(){
 		$(this).next().slideToggle('fast');
@@ -299,4 +314,7 @@ $(function() {
 		titleLength();
   	};
 
+  	$(window).on('load', function() {
+  		htmlReplase();
+  	});
 });
