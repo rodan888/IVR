@@ -105,8 +105,11 @@ $(function() {
 	$('.btn-menu').on('click',function(){
 		var navList = $('nav>ul>li'),
 			elHeight = navList.height();
-
 		$('.lang-switch').css('top', (navList.length-1) * elHeight + 150 +'px')
+
+		//$('.lang-switch').css('top', (navList.length-1) * elHeight + 121 +'px')
+		// $('.lang-switch').css('top', '370px')
+
 			.toggleClass('active');
 
 		if ($(this).hasClass('open-menu')) {
