@@ -129,8 +129,8 @@ body textarea:required:valid
 			// color: $black		
 	a
 		color: $textColor
-		&:hover
-			text-decoration: underline
+		// &:hover
+		// 	text-decoration: underline
 
 #top-b	
 	background-repeat: no-repeat
@@ -422,21 +422,35 @@ body textarea:required:valid
 			-moz-transform: translate(-50%, -50%)
 			-o-transform: translate(-50%, -50%)
 
+.programL
+	font-size: 10px
+	position: absolute
+	width: 72px
 .prise-item
 	h4
 		color: #3F3E40
 		position: relative
 		padding: 10px 
-		padding-right: 155px
+		padding-right: 175px
 		font-family: 'PTSansBold'
 		background-color: #F1F2F2
 		min-height: 44px
 		span
 			position: absolute
-			top: 10px
-			right: 110px		
+			top: 50%
+			transform: translateY(-50%)
+			&:nth-child(1)
+				right: 150px	
 			&:nth-child(2)	
-				right: 25px
+				right: 45px
+				border-left: 1px solid #000
+				padding-left: 5px
+			&:nth-child(3)
+				right: 15px	
+				height: 28px
+				line-height: 28px
+				border-right: 1px solid #000
+				padding-right: 5px
 	p
 		padding: 25px 100px 25px 25px
 .dropdown-prise
@@ -799,16 +813,7 @@ iframe
 	#news
 		padding-top: 35px
 		.n-item
-			padding-right: 0
-
-
-	.content
-		padding: 30px 0
-		img
-			max-width: 300px
-			height: auto
-			float: left
-			margin: 10px 10px 10px 0
+			padding-right: 0	
 		p
 			margin-bottom: 10px
 			clear: both
@@ -829,6 +834,12 @@ iframe
 			&:after
 				bottom: 0
 				right: -5px
+.content
+	padding: 30px 0
+	img
+		width: 100%
+		height: auto		
+		margin: 15px 0
 .review-list
 	.review
 		.block-title
@@ -1064,12 +1075,18 @@ footer
 		min-height: 30px
 	.place
 		margin-bottom: 15px
+		span
+			font-size: 14px
+			font-weight: 100
+			p
+				font-size: 14px
+				font-weight: 100
 		a
 			color: #595B5E
-			transition: padding 0.3s
-			&:hover
-				padding-left: 15px
-				text-decoration: underline
+			// transition: padding 0.3s
+			// &:hover
+			// 	padding-left: 15px
+			// 	text-decoration: underline
 	ul.nav		
 		a
 			color: $textColor
@@ -1143,11 +1160,12 @@ footer
 		text-align: center
 		text-align: center
 		img
-			// width: 100%			
-			min-height: 100%
-			// position: absolute
-			top: 0
+			width: 100%			
+			//min-height: 100%
+			position: absolute
+			top: 50%
 			left: 0
+			transform: translateY(-50%)
 	.fade_out
 		position: absolute
 		top: 0px
@@ -1185,14 +1203,35 @@ footer
 			display: none
 		.select
 			position: relative
+			.arrow
+				position: absolute
+				top: 25px
+				right: 0
+				z-index: 100
+				&:before
+					position: absolute
+					content: '\f106'	
+					width: 35px
+					font: normal normal normal 14px/1 FontAwesome
+					height: 20px
+					top: 50%
+					margin-top: -10px
+					right: 0
+					line-height: 18px
+					font-size: 25px
+					text-align: center
+					background-color: #EDEEEF
+					color: $textColor
+				&.active:before
+					content: '\f106'		
 			.select-styled
 				position: absolute
 				width: 100%
 				height: 100%
 				top: 0
 				left: 0	
-				padding-top: 13px
-				color: $textColor	
+				padding-top: 16px
+				color: $textColor					
 				&:before
 					position: absolute
 					content: '\f107'
@@ -1205,9 +1244,7 @@ footer
 					line-height: 18px
 					font-size: 25px
 					text-align: center
-					color: $textColor			
-				&.active:before
-					content: '\f106'
+					color: $textColor	
 
 			.select-options
 				position: absolute
@@ -1220,14 +1257,18 @@ footer
 				border-right: 1px solid #DADADA
 				li
 					color: $textColor
-					height: 30px			
+					min-height: 30px			
 					border-bottom: 1px solid #DADADA
 					cursor: pointer
 					padding-top: 4px
 					transition: background-color 0.3s
+					&:first-child
+						display: none
 					&:last-child
 						border-bottom-left-radius: 8px
 						border-bottom-right-radius: 8px
+					&:nth-child(2)
+						border-top: 1px solid #DADADA
 					&:hover
 						background-color: $white
 
@@ -1337,16 +1378,17 @@ footer
 					color: $mainG
 			a
 				display: block
-				position: absolute
-				top: 50%
+				// position: absolute
+				// top: 50%
 				left: 0
-				transform: translateY(-50%)			
-				-webkit-transform: translateY(-50%)			
-				-moz-transform: translateY(-50%)			
-				-o-transform: translateY(-50%)			
+				padding: 13px 0
+				// transform: translateY(-50%)			
+				// -webkit-transform: translateY(-50%)			
+				// -moz-transform: translateY(-50%)			
+				// -o-transform: translateY(-50%)			
 				color: $textColor
 				transition: all 0.3s
-				line-height: 25px
+				line-height: 22px
 				&:hover
 					color: $mainG
 					left: 15px
@@ -1418,7 +1460,7 @@ footer
 		text-align: center
 	p
 		color: $textColor
-		font-size: 16px
+		font-size: 14px
 		text-align: center	
 #history
 	position: relative
@@ -1430,7 +1472,7 @@ footer
 	.text		
 		text-align: left
 		width: 50%		
-		padding: 10px 20px
+		padding: 30px
 		position: initial
 		h3
 			text-transform: uppercase
@@ -1481,9 +1523,15 @@ footer
 
 .infoDescr
 	font-size: 14px
-	color: #6B6C6C
+	color: #000
+	font-style: normal
 	margin-top: 15px
 	display: block
+.descr
+	i
+		font-size: 14px
+		color: #000
+		font-style: normal
 
 .david-advant
 	.item
@@ -1493,6 +1541,9 @@ footer
 		font-size: 14px
 		margin-bottom: 30px
 		min-height: 90px
+		p
+			font-size: 16px
+			color: #111
 		i
 			opacity: 0.6
 		i,img
@@ -1603,7 +1654,8 @@ footer
 		color: $mainG
 		&:before
 			background-color: $mainG
-			content: '\2713'
+			content: '\f00c'
+			font-family: FontAwesome
 .popup-deskr
 	padding-right: 15px
 	.btn.small
@@ -1623,6 +1675,7 @@ footer
 			height: 100%
 			opacity: 0.5
 		&:hover a
+			opacity: 1
 			transform: rotate(90deg)
 		img
 			position: absolute
@@ -1642,7 +1695,8 @@ footer
 			height: 100px
 			margin-top: -50px
 			margin-left: -50px
-			transition: transform 0.5s			
+			opacity: 0
+			transition: all 0.5s			
 			i
 				font-size: 100px
 				color: #C3C4C4
@@ -1698,8 +1752,8 @@ footer
 		top: 0
 		left: 5px
 	p
-		font-size: 14px
-		color: $textColor
+		font-size: 16px
+		color: #000
 .tabs
 	.tabs-nav
 		margin-top: 30px	
@@ -1735,9 +1789,18 @@ footer
 				right: 0
 	#kyiv	
 		display: block
+.page-not-found
+	.title
+		position: absolute
+		top: 50%
+		left: 0
+		width: 100%
+		margin-top: -15px
 .blog-inner-title
 	color: $mainG
 	border-bottom: 1px solid #ccc
+	span
+		text-transform: lowercase
 .card-wrap
 	font-size: 0
 	>div
@@ -1747,6 +1810,8 @@ footer
 		width: 50%
 		font-size: 16px
 		padding-right: 5px
+		&:nth-child(odd)
+			padding-right: 30px
 .card
 	margin-top: 30px
 	padding: 0 10px
@@ -2076,7 +2141,9 @@ footer
 			padding: 15px
 			padding-left: 70px	
 			margin-bottom: 30px	
+			background-color: #eaeaea			
 			&:before
+				background-color: #eaeaea
 				position: absolute
 				content: attr(data-index)
 				width: 34px
@@ -2098,11 +2165,11 @@ footer
 				width: 2px
 				height: 100%
 				background-color: $mainO
-			&:nth-child(odd)
-				background-color: #eaeaea
-				&:before
-					background-color: #eaeaea
-			&:nth-child(even)
+			// &:nth-child(odd)
+			// 	background-color: #eaeaea
+			// 	&:before
+			// 		background-color: #eaeaea
+			&:nth-child(2)
 				border: 2px solid #eaeaea
 				background-color: $white
 				&:before
@@ -2138,7 +2205,7 @@ footer
 		top: 3px
 		left: 18px
 		z-index: 10
-	>div
+	>div:not(.popup)
 		display: inline-block		
 		vertical-align: top
 		font-size: 16px
@@ -2187,6 +2254,8 @@ footer
 				font-size: 14px
 				margin-top: 0px
 				min-height: 45px
+				.ticket-comment-link
+					display: none
 				.ticket-comment-author
 					display: block
 					color: $mainG
