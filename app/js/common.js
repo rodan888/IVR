@@ -46,9 +46,15 @@ $(function() {
 		if($('input#phone').val().length < 6){
 			if(lng === 'uk'){	          	
 				alert('Укажите телефон!')
-	        }else{
-				alert('Вкажіть телефон!');	            
-		    };
+	    }else{
+				alert('Вкажіть телефон!');
+			}
+		}else if($('input#name').val().length < 3){
+			if(lng === 'uk'){	          	
+				alert('Укажите ваше имя!');
+	    }else{
+				alert('Вкажіть ваше ім\'я!')			
+			}
 		}else{
 			jQuery.ajax({
 				type: "POST",
@@ -193,10 +199,9 @@ $(function() {
 	var pageAjax = $('.ajax-nav li, .custom-button');
 	pageAjax.eq(0).addClass('active');
 
-	pageAjax.on('click', function(){
-		var     url       = $(this).data('ajax'),
-				offset    = $(this).index(),
-				filter    = $(this).data('filter'),
+	pageAjax.on('click', function(){		
+		var url       = $(this).data('ajax'),
+				offset    = $(this).index(),				
 				parrent   = $(this).data('parrent'),
 				contBlock = $('#ajax-page .container-fluid'),
 				speener   = $('.speener');
@@ -206,12 +211,60 @@ $(function() {
 		$(this).addClass('active');
 
 		speener.css('display','block');
-		$.get(url+'?offset='+offset+'&filter='+filter+'&parrent='+parrent, function(data){	
+		$.get(url+'?offset='+offset+'&parrent='+parrent, function(data){	
 			speener.fadeOut('fast');
 			contBlock.append(data);	
 			mapInit();		
 		});
-	}); 
+	});
+
+	var blogAjax = $('.blog-ajax-nav li');			
+	$('.btn-ajax-news').on('click',function(){		
+		var url       = $(this).data('ajax'),
+				filter    = $(this).data('filter'),
+				parrent   = $(this).data('parrent'),
+				speener   = $('.speener'),
+				limit     = $(this).data('limit'),
+				tpl       = $(this).data('tpl'),
+				contBlock = $('#ajax-page .container-fluid');
+
+		contBlock.html(''); 
+		speener.css('display','block');
+		$.get(url+'?filter='+filter+'&tpl='+tpl+'&parrent='+parrent+'&limit='+limit, function(data){	
+			speener.fadeOut('fast');
+			contBlock.append(data);			
+			blogAjax = $('.blog-ajax-nav li');					
+
+			ajaxBlogPage(blogAjax);
+		});
+	});
+
+	var ajaxBlogPage = function(el){
+		el.on('click', function(){			
+			var url       = $(this).data('ajax'),
+					offset    = $(this).data('offset') - 1,				
+					parrent   = $(this).data('parrent'),
+					contBlock = $('#ajax-page .container-fluid .appended-block'),
+					speener   = $('.speener');
+
+			console.log(url+'?offset='+offset+'&parrent='+parrent);
+
+			el.removeClass('active');		
+			contBlock.html('');	
+			speener.css('display','block');
+
+			$.get(url+'?offset='+offset+'&parrent='+parrent, function(data){
+				speener.fadeOut('fast');
+				contBlock.append(data);
+
+				el.eq(offset).addClass('active');		
+				// blogAjax = $('.blog-ajax-nav li');
+				// ajaxBlogPage(blogAjax);				
+			});
+		});
+	};
+	
+
 
 	jQuery( '.slider-inner' ).sliderPro({
 		height: 515,

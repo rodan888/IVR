@@ -168,6 +168,24 @@ body textarea:required:valid
 			font-size: 100px
 
 #ajax-page
+	&.rehab
+		form
+			.btn
+				background-color: $mainO
+				border: 2px solid $mainO
+				&:hover
+					color: $mainO
+					background-color: $white
+		.content-c 
+			div
+				i
+					background-color: $mainO
+			h3
+				color: $mainO
+		.title
+			color: $mainO
+
+
 	form
 		margin-top: 30px
 		p
@@ -182,7 +200,9 @@ body textarea:required:valid
 			width: 100%
 			font-size: 12px
 			margin-bottom: 20px
-			background-color: $white
+			background-color: $white		
+			
+
 
 #method
 	background-color: $mainG
@@ -425,7 +445,8 @@ body textarea:required:valid
 .programL
 	font-size: 10px
 	position: absolute
-	width: 72px
+	width: 172px
+	right: 0
 .prise-item
 	h4
 		color: #3F3E40
@@ -1153,19 +1174,22 @@ footer
 				width: 100%
 	.popup-content
 		width: 80%
-		height: 80%
+		height: 80%		
 		top: 10%
 		left: 10%
 		position: absolute
 		text-align: center
 		text-align: center
+		background-color: #fff
+		border-radius: 6px
 		img
 			width: 100%			
 			//min-height: 100%
 			position: absolute
 			top: 50%
-			left: 0
-			transform: translateY(-50%)
+			left: 50%
+			max-width: 600px
+			transform: translate(-50%,-50%)
 	.fade_out
 		position: absolute
 		top: 0px
@@ -1323,6 +1347,12 @@ footer
 			line-height: 30px
 			text-align: center
 			border-radius: 50%
+	&.rehab
+		h3
+			color: $mainO
+		div
+			i
+				background-color: $mainO
 
 .side-nav
 	.side-toggle
@@ -1393,10 +1423,16 @@ footer
 					color: $mainG
 					left: 15px
 	&.rehab
-		ul
+		ul, .ajax-nav
 			li
-				color: $mainO
+				&:hover
+					color: $mainO					
+				span
+					&:hover
+						color: $mainO
 				&.active
+					span
+						color: $mainO
 					a
 						color: $mainO
 				a:hover
@@ -1679,13 +1715,14 @@ footer
 			transform: rotate(90deg)
 		img
 			position: absolute
-			top: 0
+			top: 50%
 			left: 50%
-			transform: translateX(-50%)
-			-webkit-transform: translateX(-50%)
-			-moz-transform: translateX(-50%)
-			-o-transform: translateX(-50%)
-			height: 100%
+			transform: translate(-50%,-50%)
+			-webkit-transform: translate(-50%,-50%)
+			-moz-transform: translate(-50%,-50%)
+			-o-transform: translate(-50%,-50%)
+			max-width: 550px
+			max-height: 100%
 		a
 			position: absolute
 			display: block
@@ -2186,6 +2223,19 @@ footer
 			.title
 				font-size: 16px
 				margin-bottom: 15px
+#news 
+	#ajax-page	
+		.n-item
+			padding-left: 0
+.side-nav 
+	.blog-ajax-nav
+		li
+			line-height: 20px
+			font-size: 14px
+			min-height: 40px
+			&:hover
+				padding-left: 0
+
 
 .oborud-item
 	position: relative
