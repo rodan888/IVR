@@ -184,6 +184,10 @@ body textarea:required:valid
 				color: $mainO
 		.title
 			color: $mainO
+		.block-title
+			h5
+				span:first-child
+					color: $mainO
 
 
 	form
@@ -826,7 +830,7 @@ iframe
 				border-radius: 4px
 				color: #fff
 		a
-			color: $black
+			color: #337ab7
 			&:hover
 				text-decoration: underline
 		strong
@@ -1376,9 +1380,9 @@ footer
 				color: $mainG
 				&:before
 					content: "\f077"
-			&:first-child			
-				ul
-					display: block
+			// &:first-child			
+			// 	ul
+			// 		display: block
 			&:last-child:before
 				display: none
 			.link-toggle
@@ -1423,6 +1427,22 @@ footer
 					color: $mainG
 					left: 15px
 	&.rehab
+		.side-toggle
+			li.active
+				&:before
+					color: $mainO						
+				span.link-toggle
+					color: $mainO	
+			.page-ajax.active
+				span
+					color: $mainO
+				&:before
+					color: $mainO									
+			li
+				ul
+					li
+						span
+							color: $textColor
 		ul, .ajax-nav
 			li
 				&:hover

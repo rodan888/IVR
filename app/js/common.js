@@ -42,14 +42,15 @@ $(function() {
 		var th = jQuery(this),
 			redirect = th.data('redirect');
 
+			// alert(th.action);
 
-		if($('input#phone').val().length < 6){
+		if(th.find('input#phone').val().length < 6){
 			if(lng === 'uk'){	          	
 				alert('Укажите телефон!')
-	    }else{
+			}else{
 				alert('Вкажіть телефон!');
 			}
-		}else if($('input#name').val().length < 3){
+		}else if(th.find('input#name').val().length < 3){
 			if(lng === 'uk'){	          	
 				alert('Укажите ваше имя!');
 	    }else{
@@ -58,7 +59,7 @@ $(function() {
 		}else{
 			jQuery.ajax({
 				type: "POST",
-				url: this.action,
+				url: th.action,
 				data: th.serialize()
 			}).done(function() {
 				//	location.href= redirect;			
@@ -197,28 +198,29 @@ $(function() {
 
 
 	var pageAjax = $('.ajax-nav li, .custom-button');
-	pageAjax.eq(0).addClass('active');
+	// pageAjax.eq(0).addClass('active');
 
 	pageAjax.on('click', function(){		
 		var url       = $(this).data('ajax'),
-				offset    = $(this).index(),				
-				parrent   = $(this).data('parrent'),
-				contBlock = $('#ajax-page .container-fluid'),
-				speener   = $('.speener');
-
+			offset    = $(this).index(),
+			filter    = $(this).data('filter'),
+			parrent   = $(this).data('parrent'),
+			contBlock = $('#ajax-page .container-fluid'),
+			speener   = $('.speener');
+		
 		pageAjax.removeClass('active');		
 		contBlock.html(''); 
 		$(this).addClass('active');
 
 		speener.css('display','block');
-		$.get(url+'?offset='+offset+'&parrent='+parrent, function(data){	
+		$.get(url+'?offset='+offset+'&parrent='+parrent+'&filter='+filter, function(data){	
 			speener.fadeOut('fast');
 			contBlock.append(data);	
 			mapInit();		
 		});
 	});
 
-	var blogAjax = $('.blog-ajax-nav li');			
+	var blogAjax = $('.blog-ajax-nav li');		
 	$('.btn-ajax-news').on('click',function(){		
 		var url       = $(this).data('ajax'),
 				filter    = $(this).data('filter'),
@@ -226,6 +228,7 @@ $(function() {
 				speener   = $('.speener'),
 				limit     = $(this).data('limit'),
 				tpl       = $(this).data('tpl'),
+				dataCat   = $(this).text(),
 				contBlock = $('#ajax-page .container-fluid');
 
 		contBlock.html(''); 
@@ -233,8 +236,12 @@ $(function() {
 		$.get(url+'?filter='+filter+'&tpl='+tpl+'&parrent='+parrent+'&limit='+limit, function(data){	
 			speener.fadeOut('fast');
 			contBlock.append(data);			
-			blogAjax = $('.blog-ajax-nav li');					
-
+			blogAjax = $('.blog-ajax-nav li');
+			if(lng === 'uk'){	          	
+				$('.side-nav h3').text("Другие " +dataCat);
+	    	}else{				
+				$('.side-nav h3').text("Інші " +dataCat);				
+			}
 			ajaxBlogPage(blogAjax);
 		});
 	});
@@ -244,16 +251,17 @@ $(function() {
 			var url       = $(this).data('ajax'),
 					offset    = $(this).data('offset') - 1,				
 					parrent   = $(this).data('parrent'),
+					filter    = $(this).data('filter'),
 					contBlock = $('#ajax-page .container-fluid .appended-block'),
 					speener   = $('.speener');
 
-			console.log(url+'?offset='+offset+'&parrent='+parrent);
+			// console.log(url+'?offset='+offset+'&parrent='+parrent);
 
 			el.removeClass('active');		
 			contBlock.html('');	
 			speener.css('display','block');
 
-			$.get(url+'?offset='+offset+'&parrent='+parrent, function(data){
+			$.get(url+'?offset='+offset+'&parrent='+parrent+'&filter='+filter, function(data){
 				speener.fadeOut('fast');
 				contBlock.append(data);
 
